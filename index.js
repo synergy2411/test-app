@@ -5,7 +5,7 @@ const todoRouter = require("./controller/routes/todo.routes");
 require("./db")
 
 app.use(express.json());
-
+app.get("/", (req, res) => {res.redirect("/todos")})
 app.route("/todos")
     .get(todoRouter.getTodos)
     .post(todoRouter.createTodo)
